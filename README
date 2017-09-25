@@ -1,0 +1,13 @@
+These files are slightly modified from their vanilla counterparts. You can use all or some of them as you choose. They are highly biased towards helping the wizard class, as that is the only one I play. 
+
+-potion.c has a new alchemy possiblity: dip a potion of fruit juice in a potion of levitation, and you get a potion of 
+    gain level!
+-objects.c was changed to bring the cloak of magic resistance back to its former glory: better Magic Cancellation. The 
+    silver dragon scale mail gives you a better AC, as well.
+-u_init.c is your starting inventory, attributes, and objects you know. As a wizard, you start with a spellbook of 
+    magic missile, a wand of wishing, leather armor, and a credit card in addition to your normal starting inventory. For 
+    all classes, attributes are very high. I increased the number used to generate attributes to 100, and attributes are 
+    now always above 10. Humans know some Elvish and Orcish equipment starting out. 
+-endgame.des has the maps for the Planes. The no_teleport restriction is gone from all of them. I haven't messed with the Amulet-no-teleport, though, so you still can't teleport with the Amulet. 
+
+
