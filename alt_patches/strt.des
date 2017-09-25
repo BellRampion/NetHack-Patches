@@ -1,0 +1,176 @@
+#The starting level for a modified NetHack
+#Created by Bailie
+
+MAZE:"strt",' '
+FLAGS:premapped,shortsighted
+GEOMETRY:center,center
+MAP
+---------------------------------------------------------------------------
+|..................|...................................|..................|
+|..................|...................................|..................|
+|..................+...................................|..................|
+|..................|...................................|..................|
+|..................|...................................+..................|
+|..................|...................................|..................|
+|..................|...................................|..................|
+|------------------|...................................|..................|
+|..................|...................................|------------------|
+|..................|...................................|..................|
+|..................|...................................+..................|
+|..................|...................................|..................|
+|..................|...................................|..................|
+|..................+...................................|------------------|
+|..................|...................................|..................|
+|..................|...................................+..................|
+|..................|...................................|..................|
+|..................|...................................|..................|
+|..................|...................................|..................|
+---------------------------------------------------------------------------
+ENDMAP
+REGION:(1,1,18,7),lit,"temple",unfilled
+REGION:(1,9,18,19),lit,"food shop"
+REGION:(22,1,54,19),lit,"ordinary",unfilled
+REGION:(56,1,73,8),lit,"ordinary",unfilled
+REGION:(56,10,73,13),lit,"ordinary",unfilled
+REGION:(56,15,73,19),lit,"ordinary"
+#stairs
+STAIR:(25,1),up
+STAIR:(23,10),down
+#doors
+DOOR:closed,(19,3)
+DOOR:closed,(19,14)
+DOOR:closed,(55,5)
+DOOR:closed,(55,11)
+#gold
+CONTAINER:('(',"chest"),not_trapped,(23,12) {
+OBJECT:'$',quantity:1500
+}
+OBJECT:'$',(22,1),quantity:100
+OBJECT:'$',(22,5),quantity:100
+OBJECT:'$',(22,3),quantity:100
+OBJECT:'$',(22,9),quantity:100
+OBJECT:'$',(22,8),quantity:100
+OBJECT:'$',(22,6),quantity:100
+OBJECT:'$',(22,4),quantity:100
+OBJECT:'$',(22,2),quantity:100
+OBJECT:'$',(22,10),quantity:100
+OBJECT:'$',(22,7),quantity:100
+#***Items in shop***
+#spellbooks
+OBJECT:('+',"magic missile"),(18,13),blessed,name:"magic missile"
+OBJECT:('+',"sleep"),(18,13),name:"sleep"
+OBJECT:('+',"light"),(18,13),name:"light"
+OBJECT:('+',"detect monsters"),(18,13),name:"detect monsters"
+OBJECT:('+',"healing"),(18,13),name:"healing"
+OBJECT:('+',"knock"),(18,13),name:"knock"
+OBJECT:('+',"confuse monster"),(18,13),name:"confuse monster"
+OBJECT:('+',"cure blindness"),(18,13),name:"cure blindness"
+OBJECT:('+',"drain life"),(18,13),name:"drain life"
+OBJECT:('+',"slow monster"),(18,13),name:"slow monster"
+OBJECT:('+',"wizard lock"),(18,13),name:"wizard lock"
+OBJECT:('+',"slow monster"),(18,13),name:"slow monster"
+OBJECT:('+',"detect food"),(18,13),name:"detect food"
+OBJECT:('+',"protection"),(18,13),name:"protection"
+OBJECT:('+',"jumping"),(18,13),name:"jumping"
+#wands
+OBJECT:('/',"lightning"),(18,10),99,name:"wand of lightning"
+OBJECT:('/',"light"),(18,10),99,name:"light"
+OBJECT:('/',"secret door detection"),(18,10),99,name:"secret door detection"
+OBJECT:('/',"enlightenment"),(18,10),99,name:"enlightenment"
+OBJECT:('/',"nothing"),(18,10),99,name:"nothing"
+OBJECT:('/',"striking"),(18,10),99,name:"striking"
+OBJECT:('/',"make invisible"),(18,10),99,name:"make invisible"
+OBJECT:('/',"slow monster"),(18,10),99,name:"slow monster"
+OBJECT:('/',"speed monster"),(18,10),99,name:"speed monster"
+OBJECT:('/',"undead turning"),(18,10),99,name:"undead turning"
+OBJECT:('/',"opening"),(18,10),99,name:"opening"
+OBJECT:('/',"locking"),(18,10),99,name:"locking"
+OBJECT:('/',"probing"),(18,10),99,name:"probing"
+OBJECT:('/',"digging"),(18,10),99,name:"digging"
+OBJECT:('/',"fire"),(18,10),99,name:"fire"
+OBJECT:('/',"cold"),(18,10),99,name:"cold"
+OBJECT:('/',"sleep"),(18,10),99,name:"sleep"
+#scrolls
+OBJECT:('?',"destroy armor"),(18,10),blessed,name:"destroy armor"
+OBJECT:('?',"enchant armor"),(18,11),blessed,name:"enchant armor"
+OBJECT:('?',"remove curse"),(18,11),blessed,name:"remove curse"
+OBJECT:('?',"enchant weapon"),(18,11),blessed,name:"enchant weapon"
+OBJECT:('?',"confuse monster"),(18,11),blessed,name:"confuse monster"
+OBJECT:('?',"scare monster"),(18,11),blessed,name:"scare monster"
+OBJECT:('?',"light"),(18,11),blessed,name:"light"
+OBJECT:('?',"teleportation"),(18,11),blessed,name:"teleportation"
+OBJECT:('?',"food detection"),(18,11),blessed,name:"food detection"
+OBJECT:('?',"gold detection"),(18,11),blessed,name:"gold detection"
+OBJECT:('?',"identify"),(18,11),blessed,name:"identify"
+OBJECT:('?',"magic mapping"),(18,11),blessed,name:"magic mapping"
+OBJECT:('?',"fire"),(18,11),blessed,name:"fire"
+#armor and weapons
+OBJECT:('[',"cloak of magic resistance"),(18,10),blessed,+1
+OBJECT:('[',"studded leather armor"),(18,10),blessed,1
+OBJECT:('[',"elven boots"),(18,10),blessed,name:"elven boots",1
+OBJECT:('[',"leather gloves"),(18,10),blessed,name:"leather gloves",2
+OBJECT:(')',"quarterstaff"),(18,10),blessed,1,name:"+1"
+OBJECT:(')',"athame"),(18,10),blessed,1
+OBJECT:(')',"dagger"),(18,10),blessed,quantity:5,0
+OBJECT:(')',"dart"),(18,10),blessed,quantity:10,0
+#tools
+OBJECT:('(',"magic marker"),(18,12),99,name:"99 charges"
+OBJECT:('(',"skeleton key"),(18,12)
+OBJECT:('(',"tallow candle"),(18,12),blessed,quantity:5
+OBJECT:('(',"can of grease"),(18,12),blessed,99
+OBJECT:('(',"oil lamp"),(18,12),uncursed
+OBJECT:('(',"oilskin sack"),(18,12),blessed
+#potions
+OBJECT:('!',"healing"),(18,16),quantity:5,name:"healing"
+OBJECT:('!',"fruit juice"),(18,16),name:"fruit juice",quantity:5
+OBJECT:('!',"confusion"),(18,16),name:"confusion",quantity:2
+OBJECT:('!',"blindness"),(18,16),name:"blindness",quantity:2
+OBJECT:('!',"sickness"),(18,16),name:"sickness",quantity:5
+OBJECT:('!',"restore ability"),(18,16),name:"restore ability",quantity:3
+OBJECT:('!',"extra healing"),(18,16),name:"extra healing",quantity:5
+OBJECT:('!',"water"),(18,16),blessed,name:"holy water",quantity:10
+#rings
+OBJECT:('=',"adornment"),(18,15),uncursed,name:"adornment",+3
+OBJECT:('=',"gain strength"),(18,15),uncursed,name:"gain strength",+2
+OBJECT:('=',"gain constitution"),(18,15),uncursed,name:"gain constitution",+2
+OBJECT:('=',"increase damage"),(18,15),uncursed,name:"increase damage",+2
+OBJECT:('=',"increase accuracy"),(18,15),uncursed,name:"increase accuracy",+2
+OBJECT:('=',"protection"),(18,15),uncursed,name:"protection",+2
+OBJECT:('=',"regeneration"),(18,15),uncursed,name:"regeneration"
+OBJECT:('=',"searching"),(18,15),uncursed,name:"searching"
+OBJECT:('=',"stealth"),(18,15),uncursed,name:"stealth"
+OBJECT:('=',"sustain ability"),(18,15),uncursed,name:"sustain ability"
+OBJECT:('=',"levitation"),(18,15),uncursed,name:"leviation"
+OBJECT:('=',"hunger"),(18,15),uncursed,name:"hunger"
+OBJECT:('=',"aggravate monster"),(18,15),uncursed,name:"aggravate monster"
+OBJECT:('=',"warning"),(18,15),uncursed,name:"warning"
+OBJECT:('=',"poison resistance"),(18,15),uncursed,name:"poison resistance"
+OBJECT:('=',"fire resistance"),(18,15),uncursed,name:"fire resistance"
+OBJECT:('=',"cold resistance"),(18,15),uncursed,name:"cold resistance"
+OBJECT:('=',"shock resistance"),(18,15),uncursed,name:"shock resistance"
+OBJECT:('=',"free action"),(18,15),uncursed,name:"free action"
+OBJECT:('=',"slow digestion"),(18,15),uncursed,name:"slow digestion"
+OBJECT:('=',"teleportation"),(18,15),uncursed,name:"teleporation"
+OBJECT:('=',"invisibility"),(18,15),uncursed,name:"invisibility"
+OBJECT:('=',"see invisible"),(18,15),uncursed,name:"see invisible"
+OBJECT:('=',"protection from shape changers"),(18,15),uncursed,name:"protection from shape changers"
+#altar
+ALTAR:(9,5),coaligned,shrine
+#engravings
+ENGRAVING:(10,11),burn,"Elbereth"
+ENGRAVING:(20,14),burn,"Elbereth"
+ENGRAVING:(22,1),burn,"Elbereth"
+ENGRAVING:(22,2),burn,"Elbereth"
+ENGRAVING:(22,3),burn,"Elbereth"
+ENGRAVING:(22,4),burn,"Elbereth"
+ENGRAVING:(22,5),burn,"Elbereth"
+ENGRAVING:(22,6),burn,"Elbereth"
+ENGRAVING:(22,7),burn,"Elbereth"
+ENGRAVING:(22,8),burn,"Elbereth"
+ENGRAVING:(22,9),burn,"Elbereth"
+ENGRAVING:(22,10),burn,"Elbereth"
+ENGRAVING:(23,12),burn,"Elbereth"
+ENGRAVING:(20,14),burn,"Elbereth"
+ENGRAVING:(21,14),burn,"Elbereth"
+ENGRAVING:(22,14),burn,"Elbereth"
+ENGRAVING:(23,14),burn,"Elbereth"
