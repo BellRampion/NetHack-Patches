@@ -1,0 +1,5 @@
+These files are for an alternate version of NetHack where you pick (aka buy) your starting inventory. It is geared towards the wizard. 
+
+The .c files are interchangeable with others having the same names, but any other files must ALL be used. Both Makefiles have been changed to contain the name of the special level. The special level has also been added to dungeon.def. 
+
+See "Add a NetHack level" for instructions on creating and adding your own levels. Steps 2 through 4 have already been implemented if you use the level in this folder. 
