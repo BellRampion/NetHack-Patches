@@ -6,13 +6,14 @@ Linux (specifically Ubuntu):
 3. Go to sys/unix and change Makefile.top and Makefile.dat to include the level in the list of special levels. Makefile.dat will need the name of the .des file and Makefile.top will need the name of the .lev file ("levelname" from the MAZE: "levelname" line in the .des file). 
 4. Add the name of the level ("levelname") to dungeon.def. Format: LEVEL: "levelname" ""single-character-for-bones-files"" @            (dng_level,num_levs_up_or_down_from_that)
     LEVALIGN: one of neutral, chaotic, or lawful 
-5. Go the the NetHack folder in the Terminal and type make all. Hit enter.
-6. Finish installing NetHack. 
+5. Got to sys/unix/hints and replace the VARDIR = /var/games/nethack with VARDIR = /var/games/altnethack.
+6. Go the the NetHack folder in the Terminal and type make all. Hit enter.
+7. Finish installing NetHack. 
 
 Windows: 
 1. If you have already compilied and installed NetHack, uninstall it. 
 2. Create a .des file with the level in it and save it in the dat folder. (See www.nethackwiki.com for des-file formatting, or look at the .des files already in NetHack)
-3. Go to sys/unix and change Makefile.top and Makefile.dat to include the level in the list of special levels. Makefile.dat will need the name of the .des file and Makefile.top will need the name of the .lev file ("levelname" from the MAZE: "levelname" line in the .des file). 
+3. Go to sys/winnt and change Makefile.top and Makefile.dat to include the level in the list of special levels. Makefile.dat will need the name of the .des file and Makefile.top will need the name of the .lev file ("levelname" from the MAZE: "levelname" line in the .des file). 
 4. Add the name of the level ("levelname") to dungeon.def. Format: LEVEL: "levelname" ""single-character-for-bones-files"" @            (dng_level,num_levs_up_or_down_from_that)
     LEVALIGN: one of neutral, chaotic, or lawful 
 5. Install NetHack again. 
