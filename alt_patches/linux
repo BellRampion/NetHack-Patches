@@ -1,0 +1,53 @@
+#
+# NetHack 3.6  linux $NHDT-Date: 1432512814 2015/05/25 00:13:34 $  $NHDT-Branch: master $:$NHDT-Revision: 1.12 $
+# Copyright (c) Kenneth Lorber, Kensington, Maryland, 2007.
+# NetHack may be freely redistributed.  See license for details. 
+#
+#-PRE
+# Linux hints file
+# This hints file provides a single-user tty build for Linux, specifically
+# for Ubuntu dapper.
+
+# install in the global folder, not a user folder
+PREFIX=/usr
+#PREFIX=$(wildcard ~)/nh/install
+HACKDIR=$(PREFIX)/games/lib/$(GAME)dir
+SHELLDIR = $(PREFIX)/games
+INSTDIR=$(HACKDIR)
+# a better location for game files
+VARDIR = /var/games/altnethack
+# the global config file
+SYSCONFFILE=/etc/anethackrc
+# Ubuntu's group for games
+GAMEGRP=games
+
+# permissions on config file
+POSTINSTALL=cp -n sys/unix/sysconf $(SYSCONFFILE); $(CHOWN) $(GAMEUID) $(SYSCONFFILE); $(CHGRP) $(GAMEGRP) $(SYSCONFFILE); chmod $(VARFILEPERM) $(SYSCONFFILE);
+
+CFLAGS=-g -O -I../include -DNOTPARMDECL $(CFLAGS1) -DDLB
+CFLAGS1=-DCOMPRESS=\"/bin/gzip\" -DCOMPRESS_EXTENSION=\".gz\"
+# Point to the correct config file
+CFLAGS+=-DSYSCF -DSYSCF_FILE=\"$(SYSCONFFILE)\" -DSECURE
+CFLAGS+=-DHACKDIR=\"$(HACKDIR)\"
+# tell nethack where the game files are
+CFLAGS+=-DVAR_PLAYGROUND=\"$(VARDIR)\"
+
+LINK=$(CC)
+# Only needed for GLIBC stack trace:
+LFLAGS=-rdynamic
+
+WINSRC = $(WINTTYSRC)
+WINOBJ = $(WINTTYOBJ)
+WINLIB = $(WINTTYLIB)
+
+# use ncurses
+WINTTYLIB=-lncurses
+
+# actually execute the chown
+CHOWN=chown
+# actually execute the chgrp
+CHGRP=chgrp
+
+VARDIRPERM = 0777
+VARFILEPERM = 0777
+GAMEPERM = 0777
