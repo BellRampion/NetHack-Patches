@@ -1467,7 +1467,7 @@ boolean your_fault;
         */
         }
         if (angermon)
-            wakeup(mon);
+            wakeup(mon, TRUE);
         else
             mon->msleeping = 0;
     }
